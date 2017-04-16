@@ -7,8 +7,8 @@ public class MediaAlunos {
     
     public static void main(String[] args) {
         
-        // Quantidade de alunos (constante)
-        final int QUANTIDADE = 3;
+        // Quantidade de alunos
+        int quantidadeAlunos = 3;
         
         // Variáveis locais para leitura do teclado
         String nome = "";
@@ -18,26 +18,30 @@ public class MediaAlunos {
         // Objeto para leitura de dados do teclado
         Scanner leitura = new Scanner (System.in);
         
+        // Le a quantidade de alunos
+        System.out.println ("Informe a quantidade de alunos: ");
+        quantidadeAlunos = leitura.nextInt ();
+        
         // Vetor com objetos da classe Aluno criado com QUANTIDADE elementos
-        Aluno [] aluno = new Aluno [QUANTIDADE];
+        Aluno [] aluno = new Aluno [quantidadeAlunos];
         
         // Leitura dos nomes e notas dos alunos
-        for (int i = 0; i < QUANTIDADE; ++ i) {
+        for (int i = 0; i < quantidadeAlunos; ++ i) {
             
-            System.out.print ("Informe o nome do aluno #" + (i + 1) + ":");
+            System.out.print ("Informe o nome do aluno #" + (i + 1) + ": ");
             nome = leitura.next ();
             
-            System.out.print ("Informe a primeira nota do aluno #" + (i + 1) + ":");
+            System.out.print ("Informe a primeira nota do aluno #" + (i + 1) + ": ");
             nota1 = leitura.nextDouble ();
             
-            System.out.print ("Informe a segunda nota do aluno #" + (i + 1) + ":");
+            System.out.print ("Informe a segunda nota do aluno #" + (i + 1) + ": ");
             nota2 = leitura.nextDouble ();
             
             aluno [i] = new Aluno (nome, nota1, nota2);
         }
         
         // Impressão dos valores lidos e do diagnostico
-        for (int i = 0; i < QUANTIDADE; ++ i) {
+        for (int i = 0; i < quantidadeAlunos; ++ i) {
             
             System.out.println ("Aluno #" + (i + 1));
             
